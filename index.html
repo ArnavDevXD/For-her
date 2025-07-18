@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Love for Madam ji</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .heart {
+      width: 100px;
+      height: 90px;
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 100px;
+      height: 150px;
+      background: red;
+      border-radius: 50px 50px 0 0;
+      transform: rotate(-45deg);
+      transform-origin: 0 100%;
+    }
+
+    .heart::after {
+      left: 50px;
+      transform: rotate(45deg);
+      transform-origin: 100% 100%;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background: #ff416c;
+      border: none;
+      border-radius: 25px;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    button:hover {
+      background: #ff4b2b;
+    }
+
+    .message {
+      margin-top: 30px;
+      max-width: 600px;
+      text-align: center;
+      font-size: 22px;
+      line-height: 1.6;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+
+    .show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .end-love {
+      margin-top: 20px;
+      font-size: 26px;
+      font-weight: bold;
+      display: none;
+    }
+
+    .by-arnav {
+      position: absolute;
+      bottom: 20px;
+      right: 30px;
+      font-size: 16px;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="heart"></div>
+
+  <button onclick="showLove()">Click Here Madam ji 💖</button>
+
+  <div class="message" id="loveMsg">
+    Madam ji, aap humare saath bahut saalon se hain,<br>
+    aur hum aapko aur aap humein bahut dino se jaante hain.<br>
+    Dil se kehna chahta hoon,<br>
+    Humko aapse bahut pyaar hai... ❤️
+  </div>
+
+  <div class="end-love" id="finalLine">I Love You 💌</div>
+
+  <div class="by-arnav">By Arnav</div>
+
+  <script>
+    function showLove() {
+      const msg = document.getElementById('loveMsg');
+      const final = document.getElementById('finalLine');
+      msg.classList.add('show');
+      setTimeout(() => {
+        final.style.display = 'block';
+      }, 2500);
+    }
+  </script>
+
+</body>
+</html>
